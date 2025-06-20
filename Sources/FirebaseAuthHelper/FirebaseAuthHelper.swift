@@ -31,7 +31,7 @@ public struct ErrorMessage : Codable {
 
 
 
-public class AuthHelper {
+public class FirebaseAuthHelper {
     // Function to return Basic Authentication string
     private func basicAuth(user: String, password: String) -> String {
         let credentialData = "\(user):\(password)".data(using: .utf8)!
