@@ -18,11 +18,11 @@ public enum ContentType {
 
 
 public struct GenericResponse  {
-    var status : ResponseResult
-    var code : Int
-    var message : String
-    var data: Data?
-    var errorMessage: String?
+    public var status : ResponseResult
+    public var code : Int
+    public var message : String
+    public var data: Data?
+    public var errorMessage: String?
 }
 
 public struct ErrorMessage : Codable {
