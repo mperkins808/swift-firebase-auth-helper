@@ -103,7 +103,7 @@ public class FirebaseAuthHelper {
                     url = components?.url?.absoluteString ?? url
                 }
                 
-                return AuthHelper.SimpleRequest(endpoint: url, method: method, token: token, completion: completion)
+                return FirebaseAuthHelper.SimpleRequest(endpoint: url, method: method, token: token, completion: completion)
             }
         }
     }
@@ -118,7 +118,7 @@ public class FirebaseAuthHelper {
                 guard let token = token else {
                     return completion(GenericResponse(status: .ERROR, code: 401, message: "Failed to get token"))
                 }
-                return AuthHelper.BodyRequest(endpoint: endpoint, data: data, token: token, contentType: contentType, method: method, completion: completion)
+                return FirebaseAuthHelper.BodyRequest(endpoint: endpoint, data: data, token: token, contentType: contentType, method: method, completion: completion)
             }
         }
     }
@@ -198,7 +198,7 @@ public class FirebaseAuthHelper {
         
         case .form:
             // Form encoding, manually convert the Codable object to a dictionary
-            guard let dict = try? AuthHelper.convertToDictionary(data) else {
+            guard let dict = try? FirebaseAuthHelper.convertToDictionary(data) else {
                 completion(GenericResponse(status: .ERROR, code: 0, message: "Failed to encode form data"))
                 return
             }
