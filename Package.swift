@@ -7,19 +7,19 @@ let package = Package(
     name: "FirebaseAuthHelper",
     platforms: [
         .iOS(.v14),
-        .macOS(.v10_15)
+        .macOS(.v10_15),
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "FirebaseAuthHelper",
-            targets: ["FirebaseAuthHelper"]),
+            targets: ["FirebaseAuthHelper"])
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.10.0")),
         .package(
-          url: "https://github.com/firebase/firebase-ios-sdk.git",
-          .upToNextMajor(from: "11.14.0")
+            url: "https://github.com/firebase/firebase-ios-sdk.git",
+            .upToNextMajor(from: "12.14.0")
         ),
     ],
     targets: [
@@ -29,7 +29,7 @@ let package = Package(
             name: "FirebaseAuthHelper",
             dependencies: [
                 "Alamofire",
-                .product(name: "FirebaseAuth", package: "firebase-ios-sdk")
+                .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
             ]
         ),
         .testTarget(
